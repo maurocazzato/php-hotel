@@ -67,12 +67,22 @@
                 return $hotel['vote'] >= $_GET['filterVote'];
             });
         }
+        if (isset($_GET['filterParking']) && $_GET['filterParking'] == '1') {
+            $filteredHotels = array_filter($filteredHotels, function ($hotel) {
+                return $hotel['parking'] == true;
+            });
+        }
     ?>
 
 <div class="container mt-5">
+        <div class="title-div">
+            <h2 class="title-heading">Hotels</h2>
+        </div>
 
         <form method="get" action="">
             <div class="form-group">
+                <label for="filterParking">Filter by Parking:</label>
+                <input type="checkbox" name="filterParking" id="filterParking" value="1">
                 <label for="filterVote">Filtra per Voto:</label>
                 <input type="number" class="form-control" name="filterVote" id="filterVote" min="1" max="5" step="1">
                 <button type="submit" class="btn btn-primary">Applica</button>
