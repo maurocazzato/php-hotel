@@ -76,7 +76,7 @@
 
 <div class="container mt-5">
         <div class="title-div">
-            <h2 class="title-heading">Hotels</h2>
+            <h1 class="title-heading">Hotels</h1>
         </div>
 
         <form method="get" action="">
